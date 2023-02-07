@@ -4,13 +4,30 @@
 <meta charset="utf-8">
 <title>數字轉換</title>
     <script type="text/javascript">
-        i=pormpt(請輸入一個數字,"10000");
-        if(i>999999999)
-            i=prompt("數字太大了，我們只處理到億，請重新輸入","10000");
-        function StringDigitalTransfer(ilnput)
-        {
+        var MathList=["","拾","佰","仟","萬","拾","佰","仟","萬"];
+        var ChinList=["","壹","貳","參","肆","伍","陸","柒","捌","玖"];
 
-        }
+        n=pormpt("請輸入一個數字","987654321");
+
+        n=54321;
+        function StringDigitalTransfer(iInput)
+        {
+            while(n>0)
+            {
+            c=n%10;//算出該位數數字
+            n=n/10;
+                a=a+1;//結合上一行算出循環次數 即為單位
+                if(n<0)
+                    a+1;//a為驗算
+            }
+
+            if(n>999999999)
+                return("數字太大了，我們只處理到億！")
+            /*else
+                return(Text;)*/
+        };
+        
+
     </script>
 </head>
 
