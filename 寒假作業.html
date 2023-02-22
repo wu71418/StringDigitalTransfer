@@ -4,34 +4,45 @@
 <meta charset="utf-8">
 <title>數字轉換</title>
     <script type="text/javascript">
-        var MathList=["","拾","佰","仟","萬","拾","佰","仟","萬"];
-        var ChinList=["","壹","貳","參","肆","伍","陸","柒","捌","玖"];
+        var ChinList=["","拾","佰","仟","萬","拾","佰","仟","萬"];
+        var MathList=["","壹","貳","參","肆","伍","陸","柒","捌","玖"];
+        var a=1;
+        var Text;
 
-        n=pormpt("請輸入一個數字","987654321");
+        n=prompt("請輸入一個數字","987654321");
 
-        n=54321;
-        function StringDigitalTransfer(iInput)
+        function StringDigitalTransfer()
         {
             while(n>0)
             {
             c=n%10;//算出該位數數字
             n=n/10;
-                a=a+1;//結合上一行算出循環次數 即為單位
-                if(n<0)
-                    a+1;//a為驗算
+            Math.trunc(n);
+                a=a+1;//結合上上行算出循環次數 即為單位
+                if(n>0)
+                    a+1;
+
+                for(i=1;i<=10;i++)//先數字
+                    for(j=1;j<=9;j++)//再單位
+                    {
+                        if(i==c)
+                            Text=Text+MathList[i];
+                        if(j==a)
+                            Text=Text+ChinList[j];
+                    }
             }
 
             if(n>999999999)
-                return("數字太大了，我們只處理到億！")
-            /*else
-                return(Text;)*/
+                alert("數字太大了，我們只處理到億！")
+            else
+                alert(Text);
         };
-        
 
+        StringDigitalTransfer();
     </script>
 </head>
 
 <body>
-    
+
 </body>
 </html>
