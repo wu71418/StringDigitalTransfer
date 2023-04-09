@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <title>數字轉換</title>
     <script type="text/javascript">
-        var ChinList=["","拾","佰","仟","萬","拾","佰","仟","萬"];
-        var MathList=["","壹","貳","參","肆","伍","陸","柒","捌","玖"];
-        var a=1;
+        let ChinList=["","拾","佰","仟","萬","拾","佰","仟","萬"];
+        let MathList=["","壹","貳","參","肆","伍","陸","柒","捌","玖"];
+        let a=1;
         let Text;
 
         n=prompt("請輸入一個數字","987654321");
@@ -14,7 +14,12 @@
         function StringDigitalTransfer()
         {
         Number(n);
-                for(i=1;i<=10;i++)//先數字
+            Math.turnc(c=n%10);//算出該位數數字
+            Math.trunc(n=n/10);
+            a=a+1;//結合上上行算出循環次數 即為單位
+            if(n>0)
+                a+1;
+            for(i=1;i<=10;i++)//先數字
                     for(j=1;j<=9;j++)//再單位
                     {
                         if(i==c)
@@ -25,9 +30,9 @@
             }
 
         if(n>999999999)
-            alert("數字太大了，我們只處理到億！")
+           document.write("數字太大了，我們只處理到億！")
         else
-            alert(Text);
+            document.write(Text);
 
     </script>
 </head>
